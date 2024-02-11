@@ -1,0 +1,28 @@
+姓名:伟新
+在……之上:
+workflow_dispatch:
+计划表:
+    # 代表国际标准时间23点0分，北京时间需要+8小时，代表北京时间上午7点运行
+-克朗:'0 23 * * *'
+工作:
+#将工作流程中运行的所有作业组合在一起
+建立:
+  #定义名为build的作业.子键将定义作业的属性
+run-on:ubuntu-最新
+步骤:
+-uses:操作/签出@v2
+    
+-姓名:设置Python3.9
+uses:操作/setup-python@v2
+和……一起:
+Python版:3.9.1
+-姓名:设置时区
+跑:|
+CP/usr/share/zoneinfo/亚洲/上海/etc/当地时间
+-姓名:安装pip包
+跑:|
+Python-m pip安装--upgrade pip
+pip3安装-r要求.txt
+-姓名:伟新
+跑:|
+python3main.py
